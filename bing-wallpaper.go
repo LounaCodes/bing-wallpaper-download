@@ -35,7 +35,7 @@ func fetchWallpaperLink() (string, error) {
     }
 
     //找到包含壁纸链接的#preloadBg 元素.
-    sel := doc.Find("#preloadBg").First()
+    sel := doc.Find("#downloadLink").First()
     link, exists := sel.Attr("href")
 
     if !exists {
