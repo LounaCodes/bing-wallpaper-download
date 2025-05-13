@@ -34,12 +34,12 @@ func fetchWallpaperLink() (string, error) {
         return "", err
     }
 
-    //找到包含壁纸链接的#preloadBg 元素.
+    //找到包含壁纸链接的#downloadLink 元素.
     sel := doc.Find("#downloadLink").First()
     link, exists := sel.Attr("href")
 
     if !exists {
-        return "", errors.New("Could not find #preloadBg element on Bing. Cannot fetch wallpaper link")
+        return "", errors.New("Could not find #downloadLink element on Bing. Cannot fetch wallpaper link")
     }
 
     return fmt.Sprintf("%s%s", bingURL, link), nil    //非大陆外,返回: bingURL link;
